@@ -1,63 +1,88 @@
 import React,{useState, useEffect} from 'react';
 import logo from './images/beats_logo.jpg';
 import fundo from './images/dre_beats.jpg'
+import lupa from './images/download.png'
+import carrinho from './images/cart.png'
+import user from './images/human.png'
 import { Carrinho, Twitter, Instagram, Facebook, Linkedin, User, Lupa } from './components/svg/Svg'
 
 import './App.css';
 import { Link } from './styles'
+import { LinkInferior } from './styles'
+
 
 function App() {
-  const [teste,setTeste]=useState('Headphones')
+  const [headphone,setHead]=useState('Headphone')
+  const [performance,setPerformance]=useState('Performance')
+  const [sobre,setSobre]=useState('Sobre Nós')
+  const [media,setMedia]=useState('Media')
+  const [suporte,setSuporte]=useState('Suporte')
   const [cor, setCor]=useState(false)
+  // ================
+  const [politica,setPolitica]=useState('Politica de Privacidade')
+  const [garantia,setGarantia]=useState('Garantia')
+  const [contato,setcontato]=useState('Contato')
+// ===================
+
 
   useEffect(()=>{
     console.log(cor)
   }, [cor])
 
   return (
-    <>
+    
     <div className="container">
       <header className="cabecalho">
         <img src={logo}/>
         <div className= 'menu'>
             <ul>
               <li>
-                <Link cor={cor} onClick={()=>{setCor(!cor)}}>{ teste }</Link>
+                <button>
+                <Link cor={cor} onClick={()=>{setCor(!cor)}}>{ headphone }</Link>
+                </button>
               </li>
               <li>
-                <a>Performance</a>
+                <button>
+                <Link cor={cor} onClick={()=>{setCor(!cor)}}>{ performance }</Link>
+                </button>
               </li>
               <li>
-                <a>Company</a>
+                <button>
+                <Link cor={cor} onClick={()=>{setCor(!cor)}}>{ sobre }</Link>
+                </button>
               </li>
               <li>
-                <a>Media</a>
+                <button>
+                <Link cor={cor} onClick={()=>{setCor(!cor)}}>{ media }</Link>
+                </button>
               </li>
               <li>
-                <a>Support</a>
+                <button>
+                <Link cor={cor} onClick={()=>{setCor(!cor)}}>{ suporte }</Link>
+                </button>
               </li>
             </ul>
         </div>
           <ul className='menuicones'>
             <li>
-              <a>
-                <Lupa/>
-              </a>
-              <a>
-                <Carrinho/>
-              </a>
-              <a>
-                <User/>
-              </a>
+              <button><img src={lupa}/>
+              </button>
+              <button>
+                {/* <Carrinho/> */}
+                <img src={carrinho}/>
+              </button>
+              <button>
+                <img src={user}/>
+              </button>
             </li>
           </ul>
       </header>
-       <div className='Corpo'>
-          <span className='titulo'>Logix Envolve 85e</span>
-          <span className='subtitulo'>Whetever you're a sound engineer, DJ, video content creator or mobile journalist, our new Professional Audio section of the visible has what you need.
+       <div className='corpo'>
+          <span className='titulo'>O som dos profissionais</span>
+          <span className='subtitulo'>Fone de ouvido intra-auricular de alto desempenho totalmente sem fio.<br></br> À venda em todas as cores.
           </span>
           <button>
-            SHOP NOW
+            COMPRE AGORA
           </button>
       </div>
       <div className='footer'>
@@ -80,23 +105,22 @@ function App() {
           <div className='menupaginas'>
             <ul>
               <li>
-                <a>Privacy Policy</a>
+                <LinkInferior cor={cor} onClick={()=>{setCor(!cor)}}>{ politica }</LinkInferior>
               </li>
               <li>
-                <a>Warranty</a>
+                <LinkInferior cor={cor} onClick={()=>{setCor(!cor)}}>{ garantia }</LinkInferior>
               </li>
               <li>
-                <a>Support</a>
+                <LinkInferior cor={cor} onClick={()=>{setCor(!cor)}}>{ suporte }</LinkInferior>
               </li>
               <li>
-                <a>Contact Us</a>
+                <LinkInferior cor={cor} onClick={()=>{setCor(!cor)}}>{ contato }</LinkInferior>
               </li>
             </ul>
           </div>
       </div>
 
     </div>
-    </>
   );
 }
 
