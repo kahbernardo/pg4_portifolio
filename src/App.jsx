@@ -12,7 +12,7 @@ import { LinkInferior } from './styles'
 
 
 function App() {
-  const [headphone,setHead]=useState('Headphone')
+  const [headphone,setHead]=useState('Headphones')
   const [performance,setPerformance]=useState('Performance')
   const [sobre,setSobre]=useState('Sobre Nós')
   const [media,setMedia]=useState('Media')
